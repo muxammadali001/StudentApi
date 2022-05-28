@@ -5,7 +5,7 @@ namespace StudentApi.Services;
 public class StudentService
 {
     private readonly ILogger<StudentService> _logger;
-    public List<Student> Students { get; set; } = new() {new(){Id = Guid.NewGuid(), FirstName = "Shukhrat", LastName = "Utaboev", Age = 21, TeacherId = new("ff8adbc3-7022-4100-be0f-648c5d22d7d6")}};
+    public List<Student> Students { get; set; } = new() {new(){Id = Guid.NewGuid(), FirstName = "Tony", LastName = "Steve", Age = 21, TeacherId = new("ff8adbc3-7022-4100-be0f-648c5d22d7d6")}};
 
     public StudentService(ILogger<StudentService> logger)
     {
@@ -41,4 +41,9 @@ public class StudentService
     }
 
     public bool Exists(Guid id) => Students.Any(s => s.Id == id);
+
+    internal object GetAllStudentByTeacherId(Guid id)
+    {
+        throw new NotImplementedException();
+    }
 }
